@@ -38,8 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap3',
+
     'oauth2_provider',
     'corsheaders',
+
+    'catalog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'luna_gate.wsgi.application'
 
+LOGIN_URL = '/catalog/login'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases

@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^catalog/', include('catalog.urls')),
     url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
