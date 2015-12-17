@@ -1,8 +1,21 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
 
+from .forms import RegistrationForm
+
 def registration(request):
     context = {}
+
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            context['success'] = 'user successfully created'
+            render(request, 'catalog/login.html', context)
+
+    else:
+        form = RegistrationForm()
+
+    context['form'] = form
     return render(request, 'catalog/registration.html', context)
 
 def login(request):
